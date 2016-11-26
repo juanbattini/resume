@@ -23,7 +23,7 @@
         <div class="row" ng-controller="AppCtrl">
             <div class="col-lg-4">
                 <h2>Education</h2>
-                <div ng-repeat="edu in resume">
+                <div ng-repeat="edu in resume | filter:{ type: 'edu' }">
                     <p>School: {{edu.name}}</p>
                     <p>Degree: {{edu.degree}}</p>
                     <p>Graduation Date: {{edu.last_year}}</p>
@@ -31,13 +31,13 @@
             </div>
             <div class="col-lg-4">
                 <h2>Skills</h2>
-                <div ng-repeat="skills in resume">
+                <div ng-repeat="skill in resume | filter:{ type: 'skill' }">
                     <p>{{skill.name}}</p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <h2>Projects</h2>
-                <div ng-repeat="project in resume">
+                <div ng-repeat="project in resume | filter:{ type: 'project' }">
                     <p>{{project.name}}</p>
                 </div>
             </div>

@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.get('/resume', function(req, res) {
     console.log('I received a GET request');
 
-    db.resume.find({ type: "edu" }, function(err, docs) {
+    db.resume.find(function(err, docs) {
         console.log(docs);
         res.json(docs);
     });
