@@ -1,0 +1,55 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/justified-nav.css">
+    <title>Juan Battini</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1>Juan Pablo Battini</h1>
+            <p class="lead">Desktop Support Engineer pursuing Bachelor's Degree in Computer Science</p>
+            <p><a class="btn btn-lg btn-success" href="https://github.com/juanbattini/" role="button">Checkout my Github</a></p>
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row" ng-controller="AppCtrl">
+            <div class="col-lg-4">
+                <h2>Education</h2>
+                <div ng-repeat="edu in resume">
+                    <p>School: {{edu.name}}</p>
+                    <p>Degree: {{edu.degree}}</p>
+                    <p>Graduation Date: {{edu.last_year}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h2>Skills</h2>
+                <div ng-repeat="skills in resume">
+                    <p>{{skill.name}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h2>Projects</h2>
+                <div ng-repeat="project in resume">
+                    <p>{{project.name}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Site footer -->
+        <footer class="footer">
+            <p>Juan Battini - CS3035 - Fall 2016</p>
+        </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="controllers/controller.js"></script>
+</body>
+
+</html>
